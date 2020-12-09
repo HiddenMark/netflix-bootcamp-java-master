@@ -1,48 +1,66 @@
 package com.everis.d4i.tutorial;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
-public class Content
-{
-    private String _name;
-    private Date _visualizationDate;
-    private double _score;
-    private long _contentID;
+public class Content {
+    private String name;
+    private LocalDate visualizationDate;
+    private Double score;
+    private long contentID;
 
-    public Content()
-    {
+    public Content() {
 
     }
 
-    public Content(String name, Date visualizationDate, double score, long contentID)
-    {
-        _name = name;
-        _visualizationDate = visualizationDate;
-        _score = score;
-        _contentID = contentID;
+    public Content(String name, LocalDate visualizationDate, double score, long contentID) {
+        this.name = name;
+        this.visualizationDate = visualizationDate;
+        this.score = score;
+        this.contentID = contentID;
     }
 
     //@Getters & Setters
-    public String getName() { return _name; }
-    public void setName(String name){ _name = name; }
+    public String getName() {
+        return name;
+    }
 
-    public Date getVisualizationDate() { return _visualizationDate; }
-    public void setVisualizationDate(Date visualizationDate){ _visualizationDate = visualizationDate; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public double getScore() { return _score; }
-    public void setScore(double score) { _score = score; }
+    public LocalDate getVisualizationDate() {
+        return visualizationDate;
+    }
 
-    public long getContentID() { return _contentID; }
-    public void setContentID(long contentID) { _contentID = contentID; }
+    public void setVisualizationDate(LocalDate visualizationDate) {
+        this.visualizationDate = visualizationDate;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public long getContentID() {
+        return contentID;
+    }
+
+    public void setContentID(long contentID) {
+        this.contentID = contentID;
+    }
 
 
-    public String toString()
-    {
+    public String toString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         return String.format("Title: %s\nVisualization Date: %s\nScore: %s\nID: %s",
                 getName(),
-                formatter.format(getVisualizationDate()),
+                getVisualizationDate(),
                 getScore(),
                 getContentID());
     }

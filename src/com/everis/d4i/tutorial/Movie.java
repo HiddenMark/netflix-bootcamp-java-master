@@ -1,35 +1,42 @@
 package com.everis.d4i.tutorial;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-public class Movie extends Content
-{
-    private String _director;
-    private int _releaseYear;
+public class Movie extends Content {
+    private String director;
+    private int releaseYear;
 
-    public Movie()
-    {
+    public Movie() {
 
     }
 
-    public Movie(String name, Date visualizationDate, double score, long contentID,
-                 String director, int releaseYear)
-    {
+    public Movie(String name, LocalDate visualizationDate, double score, long contentID,
+                 String director, int releaseYear) {
         super(name, visualizationDate, score, contentID);
-        _director = director;
-        _releaseYear = releaseYear;
+        this.director = director;
+        this.releaseYear = releaseYear;
 
     }
 
     //Getters & Setters
-    public String getDirector(){ return _director; }
-    public void setDirector(String director){ _director = director; }
+    public String getDirector() {
+        return director;
+    }
 
-    public int getReleaseYear(){ return _releaseYear; }
-    public void setReleaseYear(int releaseYear){ _releaseYear = releaseYear; }
+    public void setDirector(String director) {
+        this.director = director;
+    }
 
-    public String toString()
-    {
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public String toString() {
         return String.format("%s\nDirector: %s\nReleaseYear: %s\n",
                 super.toString(),
                 getDirector(),
